@@ -14,7 +14,6 @@
 
 - **[Introduction](#introduction)**
 - **[Dependencies](#dependencies)**
-- **[Getting Started](#getting-started)**
 - **[Datasets](#datasets)**
 - **[Training and Inference on CTC Datasets](#training-and-inference-on-ctc-datasets)**
 - **[CTC Trained Models and Executables](#ctc-trained-models-and-executables)**
