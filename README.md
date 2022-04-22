@@ -18,6 +18,7 @@
 - **[Datasets](#datasets)**
 - **[Training and Inference on CTC datasets](#training-and-inference-on-ctc-datasets)**
 - **[CTC Trained Models and Executables](#ctc-trained-models-and-executables)**
+- **[CTC Metrics](#ctc-metrics)**
 - **[Citation](#citation)**
 - **[Acknowledgements](#acknowledgements)**
 
@@ -103,9 +104,9 @@ After training models, you can to generate predictions in the CTC format by runn
 We participated as team KIT-Loe-GE on the CTC and provide executables and trained models for each of the datasets we participated on [here](http://celltrackingchallenge.net/participants/KIT-Loe-GE/).
 The executables where tested on Ubuntu 16.04 and 18.04.
 
-## CTC Metrics
-You can download the CTC metrics from **[here](http://public.celltrackingchallenge.net/software/EvaluationSoftware.zip)** unzip it and save everything in ´embedtrack/ctc_metrics/CTC_eval´ then you can also evaluate all
-CTC metrics by calling the `calc_ctc_score` function in `embedtrack\ctc_metrics\eval_ctc`.
+#### CTC Metrics
+You can download the CTC metrics from **[here](http://public.celltrackingchallenge.net/software/EvaluationSoftware.zip)** unzip it and save everything in `embedtrack/ctc_metrics/CTC_eval` then you can evaluate all
+CTC metrics by calling the `calc_ctc_score` function in `embedtrack/ctc_metrics/eval_ctc`.
 
 ### Citation
 If you use our work in your research, please cite:
