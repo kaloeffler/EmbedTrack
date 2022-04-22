@@ -1,0 +1,46 @@
+#pychache
+*__pychache__/
+*.pyc
+
+# idea folders
+.idea/*
+*/.idea/*
+
+# images
+*.svg
+*.png
+*.pdf
+*.tiff
+*.tif
+
+# models
+*.pth
+*.
+
+# compressed data
+*.tar
+*.tgz
+*.npz
+*.zip
+
+# profiling
+*.profile
+
+# ipynb checkpoints
+*/.ipynb_checkpoints/*
+
+#CTC metrics
+embedtrack/ctc_metrics/CTC_eval/*
+
+#ignore content of data folders
+data/*
+ctc_raw_data/train/*
+ctc_raw_data/challenge/*
+results/*
+models/*
+
+# keep folder structure
+!**/.gitkeep
+
+
+
