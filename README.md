@@ -16,9 +16,8 @@
 - **[Dependencies](#dependencies)**
 - **[Getting Started](#getting-started)**
 - **[Datasets](#datasets)**
-- **[CTC: Trained Models and Executables](#trained-models)**
+- **[CTC: Trained Models and Executables](#ctc:-trained-models-and-executables)**
 - **[Contributing](#contributing)**
-- **[Issues](#issues)**
 - **[Citation](#citation)**
 - **[Acknowledgements](#acknowledgements)**
 
@@ -123,4 +122,4 @@ If you use our work in your research, please cite:
 ```
 
 ### Acknowledments
-We like to thank **[Neven et al.](https://github.com/davyneven/SpatialEmbeddings)** and **[Lalit et al.](https://github.com/juglab/EmbedSeg)** which made their code publicly available 
+Our code is based on the repositories of **[Neven et al.](https://github.com/davyneven/SpatialEmbeddings)** and **[Lalit et al.](https://github.com/juglab/EmbedSeg)** which we like to thank for making their code publicly available.
