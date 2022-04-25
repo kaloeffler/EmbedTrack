@@ -114,9 +114,9 @@ If you use our work in your research, please cite:
       title={EmbedTrack -- Simultaneous Cell Segmentation and Tracking Through Learning Offsets and Clustering Bandwidths}, 
       author={Katharina Löffler and Ralf Mikut},
       year={2022},
-      eprint={TODO},
+      eprint={2204.10713},
       archivePrefix={arXiv},
-      primaryClass={TODO}
+      primaryClass={cs.CV}
 }
 ```
 
