@@ -170,17 +170,17 @@ def process(
         tifffile.imsave(
             img_crop_path + os.path.basename(im)[:-4] + "_{:03d}.tif".format(i),
             im_crop,
-            compress=1,
+            compression=("ZSTD", 1),
         )
         tifffile.imsave(
             instance_crop_path + os.path.basename(im)[:-4] + "_{:03d}.tif".format(i),
             instance_crop,
-            compress=1,
+            compression=("ZSTD", 1),
         )
         tifffile.imsave(
             center_crop_img_path + os.path.basename(im)[:-4] + "_{:03d}.tif".format(i),
-            center_image_crop,
-            compress=1,
+            center_image_crop.astype(np.uint8),
+            compression=("ZSTD", 1),
         )
 
 
@@ -249,7 +249,9 @@ def calc_obj_shifts(
             lineage,
         )
         tifffile.imsave(
-            os.path.join(obj_shift_path, img_name + "." + file_ending), flow, compress=1
+            os.path.join(obj_shift_path, img_name + "." + file_ending),
+            flow,
+            compression=("ZSTD", 1),
         )
         # generate crops
 
@@ -261,7 +263,7 @@ def calc_obj_shifts(
             tifffile.imsave(
                 os.path.join(obj_shift_crops_path, img_name + "_{:03d}.tif".format(i)),
                 flow_img_crop,
-                compress=1,
+                compression=("ZSTD", 1),
             )
 
 
