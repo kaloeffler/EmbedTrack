@@ -109,13 +109,7 @@ def generate_center_image(instance, center, ids):
 
 
 def process(
-    im,
-    inst,
-    crops_dir,
-    data_subset,
-    crop_size,
-    center,
-    overlap=0.3,
+    im, inst, crops_dir, data_subset, crop_size, center, overlap=0.3,
 ):
     """
     Processes the actual images and instances to generate crops of size `crop-size`.
@@ -165,8 +159,7 @@ def process(
     n_ids = n_ids[n_ids > 0]
     center_img = generate_center_image(instance, center, n_ids)
     tifffile.imsave(
-        center_img_path + os.path.basename(im)[:-4] + ".tif",
-        center_img,
+        center_img_path + os.path.basename(im)[:-4] + ".tif", center_img,
     )
     for i, (x, y) in enumerate(upper_left):
         im_crop = image[x : x + crop_size, y : y + crop_size]
@@ -177,14 +170,17 @@ def process(
         tifffile.imsave(
             img_crop_path + os.path.basename(im)[:-4] + "_{:03d}.tif".format(i),
             im_crop,
+            compress=1,
         )
         tifffile.imsave(
             instance_crop_path + os.path.basename(im)[:-4] + "_{:03d}.tif".format(i),
             instance_crop,
+            compress=1,
         )
         tifffile.imsave(
             center_crop_img_path + os.path.basename(im)[:-4] + "_{:03d}.tif".format(i),
             center_image_crop,
+            compress=1,
         )
 
 
@@ -253,7 +249,7 @@ def calc_obj_shifts(
             lineage,
         )
         tifffile.imsave(
-            os.path.join(obj_shift_path, img_name + "." + file_ending), flow
+            os.path.join(obj_shift_path, img_name + "." + file_ending), flow, compress=1
         )
         # generate crops
 
@@ -265,6 +261,7 @@ def calc_obj_shifts(
             tifffile.imsave(
                 os.path.join(obj_shift_crops_path, img_name + "_{:03d}.tif".format(i)),
                 flow_img_crop,
+                compress=1,
             )
 
 
