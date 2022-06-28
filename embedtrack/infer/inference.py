@@ -7,7 +7,6 @@ import re
 import shutil
 from itertools import product
 from embedtrack.utils.utils import get_img_files
-import matplotlib
 import numpy as np
 import pandas as pd
 import tifffile
@@ -18,7 +17,6 @@ import embedtrack.utils.transforms as my_transforms
 from embedtrack.utils.utils import get_indices_pandas
 from pathlib import Path
 
-matplotlib.use("TkAgg")
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
