@@ -201,7 +201,7 @@ def generate_st_gt_lineage(st_seg_path, gt_track_path, res_path=None):
         file_name = os.path.split(st_seg_files[time])[1]
         if not os.path.exists(res_path):
             os.makedirs(res_path)
-        imsave(os.path.join(res_path, file_name), fused_mask)
+        imsave(os.path.join(res_path, file_name), fused_mask, compress=1)
     df = pd.DataFrame.from_dict(st_lineage, orient="index")
     df = df.reset_index().sort_values("index")
     df.to_csv(
