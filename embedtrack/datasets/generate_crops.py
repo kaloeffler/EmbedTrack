@@ -298,22 +298,23 @@ def calc_center_diffs(
     flow = np.zeros(
         (*center_img_curr.shape, len(center_img_curr.shape))
     )  # hxwx2 or dxhxwx3
-    for obj_id, seed_position in object_ids_curr.items():
-        if obj_id in object_ids_prev:
-            # same cell at t
-            prev_position = object_ids_prev[obj_id]
-        elif lineage[obj_id] in object_ids_prev:
-            # position of mother cell at t
-            prev_position = object_ids_prev[lineage[obj_id]]
-        else:
-            # cell starts at t+1
-            continue
+    if len(object_ids_curr) > 0:
+        for obj_id, seed_position in object_ids_curr.items():
+            if obj_id in object_ids_prev:
+                # same cell at t
+                prev_position = object_ids_prev[obj_id]
+            elif lineage[obj_id] in object_ids_prev:
+                # position of mother cell at t
+                prev_position = object_ids_prev[lineage[obj_id]]
+            else:
+                # cell starts at t+1
+                continue
 
-        difference = np.mean(np.stack(seed_position) - np.stack(prev_position), axis=-1)
-        # shift all pixels by avg offset
-        flow[tuple(seed_position[0]), tuple(seed_position[1]), :] = difference.reshape(
-            1, -1
-        )
+            difference = np.mean(np.stack(seed_position) - np.stack(prev_position), axis=-1)
+            # shift all pixels by avg offset
+            flow[tuple(seed_position[0]), tuple(seed_position[1]), :] = difference.reshape(
+                1, -1
+            )
     return np.transpose(flow, (2, 0, 1)).copy()  # cxhxw or cxdxhxw
 
 
