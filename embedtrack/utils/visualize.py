@@ -262,9 +262,9 @@ class VisualizeTraining:
                 offset_segm_diff_masked[0],
                 cmap=self.gray_cmp,
                 norm=matplotlib.colors.SymLogNorm(
-                    linthresh=self.grid_shape[0] / 10,
+                    linthresh=(self.grid_shape[0] / 10).cpu().numpy(),
                     vmin=0,
-                    vmax=self.grid_shape[0],
+                    vmax=(self.grid_shape[0]).cpu().numpy(),
                     base=10,
                     linscale=3,
                 ),
@@ -279,9 +279,9 @@ class VisualizeTraining:
                 offset_segm_diff_masked[1],
                 cmap=self.gray_cmp,
                 norm=matplotlib.colors.SymLogNorm(
-                    linthresh=self.grid_shape[1] / 10,
+                    linthresh=(self.grid_shape[1] / 10).cpu().numpy(),
                     vmin=0,
-                    vmax=self.grid_shape[1],
+                    vmax=self.grid_shape[1].cpu().numpy(),
                     base=10,
                     linscale=3,
                 ),
@@ -312,9 +312,9 @@ class VisualizeTraining:
                 offset_tracking_diff_masked[0],
                 cmap=self.gray_cmp,
                 norm=matplotlib.colors.SymLogNorm(
-                    linthresh=self.grid_shape[0] / 10,
+                    linthresh=(self.grid_shape[0] / 10).cpu().numpy(),
                     vmin=0,
-                    vmax=self.grid_shape[0],
+                    vmax=(self.grid_shape[0]).cpu().numpy(),
                     base=10,
                     linscale=3,
                 ),
@@ -329,9 +329,9 @@ class VisualizeTraining:
                 offset_tracking_diff_masked[1],
                 cmap=self.gray_cmp,
                 norm=matplotlib.colors.SymLogNorm(
-                    linthresh=self.grid_shape[1] / 10,
+                    linthresh=(self.grid_shape[1] / 10).cpu().numpy(),
                     vmin=0,
-                    vmax=self.grid_shape[1],
+                    vmax=self.grid_shape[1].cpu().numpy(),
                     base=10,
                     linscale=3,
                 ),
@@ -588,7 +588,7 @@ class VisualizeTraining:
             pred_flow_masked = np.ma.array(pred_flow.cpu(), mask=cell_mask)
 
             # mask data
-            gt_flow_masked = np.ma.array(gt_flow.cpu(), mask=cell_mask)
+            gt_flow_masked = np.ma.array(gt_flow.cpu().numpy(), mask=cell_mask)
             instance_mask_masked = np.ma.array(
                 instance_mask.cpu(), mask=instance_mask.cpu() == 0
             )
@@ -599,7 +599,7 @@ class VisualizeTraining:
             gt_flow_mag, gt_flow_phase = self.calc_magnitude_and_phase(
                 gt_flow_masked * self.grid_shape.cpu().numpy().reshape(-1, 1, 1)
             )
-            mask_missing = cell_ids_without_center(instance_mask, center_image).cpu()
+            mask_missing = cell_ids_without_center(instance_mask, center_image).cpu().numpy()
             gt_flow_mag[mask_missing] = -10000
             gt_flow_phase[mask_missing] = -10000
             pred_flow_mag, pred_flow_phase = self.calc_magnitude_and_phase(
@@ -631,9 +631,9 @@ class VisualizeTraining:
                 gt_flow_mag,
                 cmap=self.gray_cmp,
                 norm=matplotlib.colors.SymLogNorm(
-                    linthresh=torch.norm(self.grid_shape.float()) / 10,
+                    linthresh=(torch.norm(self.grid_shape.float()) / 10).cpu().numpy(),
                     vmin=0,
-                    vmax=torch.norm(self.grid_shape.float()),
+                    vmax=torch.norm(self.grid_shape.float()).cpu().numpy(),
                     base=10,
                     linscale=3,
                 ),
@@ -667,9 +667,9 @@ class VisualizeTraining:
                 pred_flow_mag,
                 cmap=self.gray_cmp,
                 norm=matplotlib.colors.SymLogNorm(
-                    linthresh=torch.norm(self.grid_shape.float()) / 10,
+                    linthresh=(torch.norm(self.grid_shape.float()) / 10).cpu().numpy(),
                     vmin=0,
-                    vmax=torch.norm(self.grid_shape.float()),
+                    vmax=torch.norm(self.grid_shape.float()).cpu().numpy(),
                     base=10,
                     linscale=3,
                 ),
