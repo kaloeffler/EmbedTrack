@@ -112,14 +112,15 @@ You can download the CTC metrics from **[here](http://public.celltrackingchallen
 If you use our work in your research, please cite:
 
 ```bibtex
-@misc{loeffler2022embedtrack,
-      title={EmbedTrack -- Simultaneous Cell Segmentation and Tracking Through Learning Offsets and Clustering Bandwidths}, 
-      author={Katharina Löffler and Ralf Mikut},
-      year={2022},
-      eprint={2204.10713},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
+@article{loeffler2022,
+  author={Löffler, Katharina and Mikut, Ralf},
+  journal={IEEE Access}, 
+  title={EmbedTrack—Simultaneous Cell Segmentation and Tracking Through Learning Offsets and Clustering Bandwidths}, 
+  year={2022},
+  volume={10},
+  number={},
+  pages={77147-77157},
+  doi={10.1109/ACCESS.2022.3192880}}
 ```
 
 ### Acknowledments
