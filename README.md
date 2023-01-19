@@ -27,7 +27,7 @@ This repository provides the version of the code used for the **[Paper](https://
 Based on the instance segmentation approach of **[Neven et al., 2019](https://arxiv.org/abs/1906.11109)** and its application to cell segmentation by **[Lalit et al., 2021](https://arxiv.org/abs/2101.10033)**, we extend the instance segmentation idea to learning the task of cell segmentation and tracking jointly.
 We refer to our approach as `EmbedTrack`, with which we obtain as team KIT-Loe-GE (now renamed to [KIT-GE(4)](http://celltrackingchallenge.net/participants/KIT-GE/)) several state-of-the-art results on 2D datasets of the **[Cell Tracking Challenge](http://celltrackingchallenge.net)**.
 
-To make our code more accessible, we added a **[Google Colab Notebook](https://git.scc.kit.edu/kit-loe-ge/embedtrack/-/blob/master/kit_loe_ge.ipynb)** for simple training and inference on data sets from the Cell Tracking Challenge. The Colab notebook includes all steps: setting up the environment, retrieving the CTC data sets, training data creation, training, and inference -- using your own trained models or using our models submitted to the Cell Tracking Challenge.
+To make our code more accessible, we added a **[Google Colab Notebook](hhttps://github.com/kaloeffler/EmbedTrack/blob/master/kit_loe_ge.ipynb)** for simple training and inference on data sets from the Cell Tracking Challenge. The Colab notebook includes all steps: setting up the environment, retrieving the CTC data sets, training data creation, training, and inference -- using your own trained models or using our models submitted to the Cell Tracking Challenge.
 
 
 ### Dependencies 
